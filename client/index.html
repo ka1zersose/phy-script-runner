@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Script Runner</title>
+</head>
+
+<body>
+<h1>Script Runner</h1>
+
+<div ng-app="scriptRunner" ng-controller="scriptCtrl">
+    Name: <input ng-model="scriptName">
+    Script: <textarea ng-model="script"></textarea>
+    <button ng-click="upload()">add script</button>
+    Status: <input ng-model="uploadStatus">
+
+    <dl></dl>
+    <button ng-click="listScripts()">show scripts</button>
+    Status: <input ng-model="getStatus">
+    <table ng-repeat="script in phyScripts">
+        <tr>
+            <td>
+                <input type="text" ng-value="script.name" ng-model="script.name"/>
+            </td>
+        </tr>
+    </table>
+
+    <dl></dl>
+    Script name to delete: <input type="text" ng-model="scriptToDelete"/>
+    <button ng-click="deleteScript()">delete script</button>
+    Status: <input ng-model="deleteStatus">
+
+    <dl></dl>
+    Script name to execute: <input type="text" ng-model="scriptToExecute"/>
+    <button ng-click="executeScript()">execute script</button>
+    Status: <input ng-model="execStatus">
+    Execution code: <input ng-model="execCode">
+    Execution standard output: <textarea ng-model="execStdOut"></textarea>
+    Execution error output: <textarea ng-model="execErrOut"></textarea>
+
+</div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src=main.js></script>
+
+</html>
+
+
